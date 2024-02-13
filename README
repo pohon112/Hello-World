@@ -1,1 +1,12 @@
 Hello World!
+import socket
+
+def lacak_ip(domain):
+    try:
+        ip_address = socket.gethostbyname(domain)
+        print(f"Alamat IP dari {domain} adalah: {ip_address}")
+    except socket.gaierror:
+        print("Tidak dapat menemukan alamat IP untuk domain yang diberikan.")
+
+domain = input("Masukkan nama domain: ")
+lacak_ip(domain)
